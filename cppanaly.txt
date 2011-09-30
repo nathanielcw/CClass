@@ -1,0 +1,56 @@
+Object Analysis of C++ class structure:
+
+Step 1: List Parts:
+class name
+base class
+constructors
+destructor
+members
+getters
+setter
+other functions
+format markers
+order of format markers and other objects
+
+Step 2: Mapping of parts to a more concise object-set
+(* is expandable discussion )
+name
+list of base class(es)
+list of constructors*1
+list of members*2
+destructor
+list of other functions
+ordered list of members with format objects
+a way to derive getters and setters from members
+
+**1: constructor list: composed of constructor objects
+	constructor object contains:
+		reference to list of members
+		either a default value or a parameter for each member
+**2: members list: composed of member objects
+	member object contains:
+		name
+		type
+		dereference count
+		array size
+
+Step 3: Refine scope of solution ( will implement basics first )
+	parts of class that are potentially non-basic
+		base class list
+		non-standard constructors
+		non-default destructor
+		other functions
+		array initialization in constructor
+
+  ** Discussion
+	For now, I will make a program that addresses making the members/getters/setters
+		first we need to describe the members
+		2nd we need to create functions that derive strings describing the 
+			getters/setters/constructors from the member information
+
+Step 5: Compile the list to classes
+	class Memberl ( list of members/member node for list )
+	class SimpleClass (simple class data as members, functions to write strings derived
+				from that simple data )
+
+
